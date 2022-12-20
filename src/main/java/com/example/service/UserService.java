@@ -1,5 +1,9 @@
 package com.example.service;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,9 +20,19 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 	
-	public UserDomain getUser() {
-		User user = userRepository.findAll().get(0);
-		UserDomain userDomain = new UserDomain(user);
+	public List<UserDomain> getUser() {
+		List<User> users = userRepository.findAll();
+		
+		List<UserDomain> userDomain = new ArrayList<>() ;
+		
+		for (User user : users) {
+			userDomain.add(new UserDomain(user));
+			}
 		return userDomain;
+	}
+	
+	public Optional<User> getUserById(Integer id) {
+		Optional<User> user = userRepository.findById(id);
+		return user;
 	}
 }

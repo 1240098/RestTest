@@ -22,5 +22,6 @@ public class UserDomain {
 		this.tel = user.getTel();
 		this.gender = user.getGender();
 	}
-
+	
+	public UserDomain() {}
 }
