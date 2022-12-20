@@ -18,7 +18,7 @@ public class UserDomain {
 	public UserDomain(User user) {
 		this.id = user.getId();
 		this.name = user.getName();
-		this.email = user.getE_mail();
+		this.email = user.getEMail();
 		this.tel = user.getTel();
 		this.gender = user.getGender();
 	}
