@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.domain.UserDomain;
+import com.example.dto.UserDto;
 import com.example.entity.User;
 import com.example.repository.UserRepository;
 
@@ -34,5 +35,13 @@ public class UserService {
 	public Optional<User> getUserById(Integer id) {
 		Optional<User> user = userRepository.findById(id);
 		return user;
+	}
+	
+	@Transactional
+	public Integer saveUser(UserDto req) {
+		User user =UserDomain.convertEntity(req);
+		User response = userRepository.save(user);
+		
+		return user.getId();
 	}
 }
