@@ -33,8 +33,8 @@ public class UserService {
 	}
 	
 	public Optional<User> getUserById(Integer id) {
-		Optional<User> user = userRepository.findById(id);
-		return user;
+//		Optional<User> user = userRepository.findById(id);
+		return userRepository.findById(id);
 	}
 	
 	@Transactional
