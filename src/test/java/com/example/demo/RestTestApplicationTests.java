@@ -11,6 +11,7 @@ class RestTestApplicationTests {
 	 */
 	@Test
 	void contextLoads() {
+		//あとで作る
 	}
 
 }
