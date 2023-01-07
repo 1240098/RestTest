@@ -26,8 +26,6 @@ public class UserDomain {
 		this.gender = user.getGender();
 	}
 	
-	public UserDomain() {}
-	
 	public static User convertEntity(UserDto req) {
 		User user = new User();
 		
